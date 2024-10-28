@@ -4,7 +4,6 @@ import {
   Alert,
   FlatList,
   useWindowDimensions,
-  Platform
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
@@ -78,7 +77,6 @@ export default function GameScreen({ userNumber, onGameOver }) {
 
   let content = (
     <>
-      {" "}
       <NumberContainer>{currentGuess}</NumberContainer>
       <Card>
         <InstructionText style={styles.instructionText}>
