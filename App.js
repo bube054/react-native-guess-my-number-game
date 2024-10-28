@@ -6,6 +6,7 @@ import {
   View,
   ImageBackground,
   SafeAreaView,
+  KeyboardAvoidingView,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useFonts } from "expo-font";
@@ -54,6 +55,10 @@ export default function App() {
 
   let screen = <StartGameScreens onPickNumber={pickedNumberHandler} />;
 
+  if(!fontsLoaded){
+    return null
+  }
+
   if (userNumber) {
     screen = (
       <GameScreen userNumber={userNumber} onGameOver={gameOverHandler} />
@@ -72,7 +77,7 @@ export default function App() {
 
   return (
     <>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
       <LinearGradient
         colors={[Colors.primary700, Colors.accent500]}
         style={styles.rootScreen}
